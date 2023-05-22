@@ -1,0 +1,26 @@
+﻿@page "/"
+@using BlazorServer.Data;
+
+<PageTitle>Index</PageTitle>
+
+<div class="text-center">
+    <h1>Ejercicio UA</h1>
+</div>
+
+<h2>CPU%</h2>
+<input @bind-value=PCInfo.CpuUtilization />
+<h2>CPU Count</h2>
+<input @bind-value=PCInfo.ProcessorCount />
+<h2>Available RAM</h2>
+<input @bind-value=PCInfo.RAM />
+
+<div>
+    <button class="btn btn-primary" @onclick=@Actualizar>Actualizar</button>
+</div>
+
+@{
+    void Actualizar()
+    {
+        StateHasChanged();
+    }
+}

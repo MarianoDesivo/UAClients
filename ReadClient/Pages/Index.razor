@@ -1,0 +1,18 @@
+﻿@page "/"
+@using ReadClient.Data;
+@using static ReadClient.Data.PCInfo
+
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+<h1 @bind=PCInfo.CpuUtilization />
+<input @bind=PCInfo.CpuUtilization />
+<input @bind=PCInfo.CpuUtilization />
+
+@{
+    
+}
+

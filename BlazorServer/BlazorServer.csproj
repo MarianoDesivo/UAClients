@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="License\License.lic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="License\License.lic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UnifiedAutomation.UaBase" Version="3.3.0" />
+    <PackageReference Include="UnifiedAutomation.UaBase.BouncyCastle" Version="3.3.0" />
+    <PackageReference Include="UnifiedAutomation.UaBase.Windows" Version="3.3.0" />
+    <PackageReference Include="UnifiedAutomation.UaClient" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleClient\ConsoleClient.csproj" />
+  </ItemGroup>
+
+</Project>

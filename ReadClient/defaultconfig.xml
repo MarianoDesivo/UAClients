@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClientConfigurationInFromFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Connection>
+    <DiscoveryUrl>opc.tcp://DESKTOP-MU3HI5L:49320</DiscoveryUrl>
+    <UserName>root</UserName>
+    <Password>secret</Password>
+    <ClientUrlForReverseConnect>opc.tcp://DESKTOP-MU3HI5L:49320</ClientUrlForReverseConnect>
+  </Connection>
+
+  <ClientSettings>
+    <!-- 0 is the default value of the sdk -->
+    <SessionTimeout>0</SessionTimeout>
+    <SubscriptionLifetime>0</SubscriptionLifetime>
+  </ClientSettings>
+
+  <TraceSettings>
+    <Enabled>true</Enabled>
+    <TraceFile>ConsoleClient.txt</TraceFile>
+    <TraceLevel>ProgramFlow</TraceLevel>
+  </TraceSettings>
+
+  <GdsSettings>
+    <UseGdsSecurity>false</UseGdsSecurity>
+  </GdsSettings>
+
+  <ConfiguredNamespaces>
+    <string>http://www.unifiedautomation.com/DemoServer/</string>
+  </ConfiguredNamespaces>
+  <!-- NodeIds of variable to read -->
+  <readVariableIds>
+    <string>i=2258</string>
+    <string>ns=1;s=Demo.Static.Scalar.Boolean</string>
+    <string>ns=1;s=Demo.Static.Scalar.Double</string>
+    <string>ns=1;s=Demo.Dynamic.Scalar.Double</string>
+    <string>ns=1;s=Demo.Static.Scalar.WorkOrder</string>
+  </readVariableIds>
+  
+  <!-- NodeIds of variable to write -->
+  <writeVariables>
+    <WriteValueInFile>
+      <type>Double</type>
+      <value>20</value>
+      <nodeId>ns=1;s=Demo.Static.Scalar.Double</nodeId>
+    </WriteValueInFile>
+  </writeVariables>
+
+  <!-- NodeIds of a structure to write -->
+  <structureToWriteId>ns=1;s=Demo.Static.Scalar.WorkOrder</structureToWriteId>
+  
+  <!-- NodeIds of array used for reading an index range -->
+  <readIndexRangeIds>
+  <string>ns=1;s=Demo.Static.Arrays.Guid</string>
+  </readIndexRangeIds>
+  
+  <!-- nodeId of object and method to call and input arguments-->
+  <MethodDescription>
+    <objectId>ns=1;s=Demo.Method</objectId>
+    <methodId>ns=1;s=Demo.Method.Multiply</methodId>
+    <inputArguments>
+      <VariantInFile>
+        <value>10</value>
+        <type>Double</type>
+      </VariantInFile>
+      <VariantInFile>
+        <value>20</value>
+        <type>Double</type>
+      </VariantInFile>
+    </inputArguments>
+  </MethodDescription>
+  
+  <!-- nodeId of event to subscribe -->
+  <eventId>ns=1;s=Demo.Events.SampleEventNotifier</eventId>
+  <eventOfTypeFilter>ns=1;i=1005</eventOfTypeFilter>
+  
+  <!-- nodeId of node for history read-->
+  <HistoryReadValueId>
+    <string>ns=1;s=Demo.History.Historian_2</string>
+  </HistoryReadValueId>
+  
+  <!-- nodeId of starting node for browse -->
+  <browseVariableId>ns=1;s=Demo.Static</browseVariableId>
+
+  <!-- settings for TranslateBrowsePathToNodeId -->
+  <translateId>ns=1;s=Demo.BoilerDemo.Boiler1</translateId>
+  <TranslateObjectName>FillLevelSensor</TranslateObjectName>
+  <TranslateObjectNs>2</TranslateObjectNs>
+  <translateElement>ns=1;s=FillLevelSetPoint</translateElement>
+</ClientConfigurationInFromFile>
